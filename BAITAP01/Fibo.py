@@ -1,7 +1,15 @@
-# Nhập vào số nguyên x sao cho 1 ≤ x ≤ 30.
-# Nếu x không thỏa điều kiện, chương trình xuất ra màn hình thông báo “So <x> khong nam trong khoang [1,30].”.
-# Nếu x nằm trong đoạn [1,30], chương trình xuất ra màn hình số Fibonacci thứ x.
+def Fibonacci(n):
+    if n < 0:
+        return
+    elif n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return Fibonacci(n-1) + Fibonacci(n-2)
 
-# VD:
-# -6  -> So -6 khong nam trong khoang [1,30].
-# 6   -> 8
+x = int(input())
+if (x >= 1 and x <= 30):
+    print(Fibonacci(x))
+else:
+    print("So", x, "khong nam trong khoang [1,30].")
