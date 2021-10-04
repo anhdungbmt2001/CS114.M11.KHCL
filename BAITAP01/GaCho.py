@@ -1,10 +1,6 @@
-# Vừa gà vừa chó. Bó lại cho tròn. xxx con. yy chân chẵn
-# Hãy xác định số con gà và số con chó thỏa mãn yêu cầu.
+_input = input().split()
+xxx = int(_input[0])
+yy = int(_input[1])
 
-# Dữ liệu: Vào từ thiết bị nhập chuẩn gồm 1 dòng ghi 2 số nguyên xxx và yy (2≤ xxx, yy ≤ 109)
-
-# Kết quả: Đưa ra thiết bị xuất chuẩn một dòng 2 số nguyên số gà và số chó tìm được.
-# Dữ liệu luôn bảo đảm có kết quả.
-
-# VD:
-# 36 100  ->  22 14
+chicken = int((4*xxx - yy) / 2)
+print(chicken, xxx - chicken)
