@@ -1,10 +1,12 @@
-# Kiểm tra Số Armstrong (Số Armstrong là số có K chữ số và tổng lũy thừa bậc K của các chữ số bằng chính nó)
-
-# INPUT:
-# Một số nguyên không âm
-
-# OUTPUT:
-# Xuất True nếu số nhập vào là số Armstrong, ngược lại False
-
-# VD:
-# 153  ->  True
+_input = input()
+arr_input = []
+len_input = len(_input)
+for i in range(len_input):
+    arr_input.append(int(_input[i]))
+sum = 0
+for i in arr_input:
+    sum += pow(i, len_input)
+if (sum == int(_input)):
+    print("True")
+else:
+    print("False")

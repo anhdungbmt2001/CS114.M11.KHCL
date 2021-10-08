@@ -1,13 +1,14 @@
-# Một rạp phim có diện tích sàn là n x m. Nhân lễ kỉ niệm, người ta cần lót gạch cho sàn của rạp
-# bằng các viên gạch hình vuông với cạnh có kích thước là a. Xác định số lượng viên gạch cần ít nhất
-# để phủ toàn bộ sàn, biết rằng diện tích toàn bộ số gạch được dùng có thể lớn hơn diện tích thực tế
-# của sàn và các viên gạch phải được giữ nguyên, không được cắt ra.
+_input = input().split()
+n = int(_input[0])
+m = int(_input[1])
+a = int(_input[2])
 
-# INPUT:
-# Ba số nguyên dương n, m, a
-
-# OUTPUT:
-# Số lượng gạch ít nhất cần để lót sàn.
-
-# VD:
-# 6 6 4  ->  4
+if (m % a == 0):
+    num_m = int(m / a)
+else:
+    num_m = int(m / a) + 1
+if (n % a == 0):
+    num_n = int(n / a)
+else:
+    num_n = int(n / a) + 1
+print(num_m * num_n)

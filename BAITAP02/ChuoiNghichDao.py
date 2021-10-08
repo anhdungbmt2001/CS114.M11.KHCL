@@ -1,10 +1,11 @@
-# Kiểm tra 2 chuỗi nhập vào có phải là chuỗi nghịch đảo hay không.
-
-# INPUT:
-# Dòng đầu tiên chứa chuỗi thứ nhất. Dòng kế tiếp chứa chuỗi thứ 2.
-
-# OUTPUT:
-# Xuất YES nếu 2 chuỗi là nghịch đảo. Ngược lại, xuất NO.
-
-# VD:
-# binh  hnib  ->  YES        wecode  codewe  ->  NO
+_normal_input = input()
+_inverse_input = input()
+_inverse_inversed = ""
+i = len(_inverse_input) - 1
+while (i >= 0):
+    _inverse_inversed += _inverse_input[i]
+    i -= 1
+if (_inverse_inversed == _normal_input):
+    print("YES")
+else:
+    print("NO")
