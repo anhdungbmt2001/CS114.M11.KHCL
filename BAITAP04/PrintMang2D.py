@@ -1,19 +1,22 @@
-# Bình cần xuất mảng ra màn hình để quan sát. Tuy nhiên do các số nguyên trong mảng độ dài khác nhau
-# nên khi xuất ra nhìn rất lộn xộn, không biết được số nào ở cột nào. Bạn hãy viết giúp Bình hàm
-# xuất mảng một cách ngay ngắn.
+_input = input().split()
+r = int(_input[0])
+c = int(_input[1])
+arr = []
+for i in range(r):
+    _input = input().split()
+    for ii in range(len(_input)):
+        _input[ii] = str(int(_input[ii]))
+    arr.append(_input)
 
-# INPUT
-# Dòng đầu tiên chứa hai số r và c là số dòng và số cột của mảng, mỗi số không quá 1000.
-# r dòng tiếp theo, mỗi dòng chứa c số nguyên. Đây là các phần tử trong mảng 2 chiều
+for i in range(c):
+    max_len = 0
+    for ii in range(r):
+        if (len(arr[ii][i]) > max_len):
+            max_len = len(arr[ii][i])
+    for ii in range(r):
+        arr[ii][i] = ' ' * (max_len - len(arr[ii][i])) + arr[ii][i]
 
-# OUTPUT
-# Mảng 2 chiều được canh lề phải ở các cột. Tức là chữ số cuối cùng của các cột được viết
-# thẳng hàng với nhau. Các chỗ trống được lấp đầy bằng ký tự khoảng trắng.
-# Lưu ý là đê đảm bảo chính xác ở cuối mỗi dòng của ma trận chỉ được xuất ký tự xuống dòng,
-# không được xuất khoảng trắng thừa.
-
-# VD
-# 3 3                       | 593795850 925527 97481109
-# 593795850 925527 97481109 |      8190   9258     2323
-# 8190 9258 2323            |  -8328541  62240 70544569
-# -8328541 62240 70544569   |
+for i in range(r):
+    for ii in range(c-1):
+        print(arr[i][ii], end=' ')
+    print(arr[i][c-1])

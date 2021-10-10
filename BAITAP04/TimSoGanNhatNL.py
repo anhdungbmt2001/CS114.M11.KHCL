@@ -21,3 +21,26 @@
 # 15 10434                                  |
 # 4 37086                                   |
 # 10 35250                                  |
+
+n = int(input())
+a = input().split()
+for i in range(n):
+    a[i] = int(a[i])
+_result = []
+
+while (1):
+    x = input()
+    if (x == ''):
+        break
+    x = x.split()
+    k = int(x[0])
+    x = int(x[1])
+
+    def sort_key(e):
+        return abs(e - x)
+    a.sort(key=sort_key)
+    a_ = a[:k]
+    a_.sort()
+    _result.append([a_[0], a_[k-1]])
+for e in _result:
+    print(e[0], e[1])
