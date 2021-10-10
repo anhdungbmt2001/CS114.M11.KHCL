@@ -1,11 +1,30 @@
-# Cho 2 dãy số nguyên a có na số và b có nb số, mỗi dãy đã được sắp xếp theo thứ tự tăng dần.
-# Hãy trộn hai dãy này lại để kết quả cuối cùng là một dãy tăng dần với  các phần tử là các phần tử của a và b.
-
-# INPUT
-# Dòng đầu tiên chứa kích thước của hai mảng nhập vào na, nb (0 < na, nb <= 100000)
-# Hai dòng tiếp theo lần lượt chứa các phần tử của mảng a và b
-
-# OUTPUT
-# 4 5           |
-# 1 2 4 9       | 1 2 4 8 9 10 20 22 30
-# 8 10 20 22 30 |
+n_input = input().split()
+n_a = int(n_input[0])
+n_b = int(n_input[1])
+a = []
+b = []
+_input = input().split()
+for i_ in _input:
+    a.append(int(i_))
+_input = input().split()
+for i_ in _input:
+    b.append(int(i_))
+result = []
+ia = ib = 0
+while (ia < n_a and ib < n_b):
+    if a[ia] <= b[ib]:
+        result.append(a[ia])
+        ia += 1
+    else:
+        result.append(b[ib])
+        ib += 1
+if (n_a <= n_b):
+    while (ib < n_b):
+        result.append(b[ib])
+        ib += 1
+elif (n_a > n_b):
+    while (ia < n_a):
+        result.append(a[ia])
+        ia += 1
+for r in result:
+    print(r, end=' ')

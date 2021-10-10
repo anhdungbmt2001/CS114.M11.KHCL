@@ -1,12 +1,25 @@
-# Cho một ma trận có kích thước mxn và hai biến r,c tương ứng với số dòng và số cột muốn reshape.
-# Ma trận được reshape có kích thước rxc và được điền đầy đủ các phần tử của ma trận gốc theo chiều ngang.
-# Nếu có thể reshape được ma trận, xuất ra ma trận mới. Ngược lại, xuất ma trận gốc.
+_input = input().split()
+n = int(_input[0])
+m = int(_input[1])
+_input = input().split()
+r = int(_input[0])
+c = int(_input[1])
 
-# INPUT:
-# Dòng đầu tiên gồm hai số nguyên dương n, m (2 <= n, m <= 3000) - Theo thứ tự là số hàng, cột của ma trận gốc.
-# Dòng thứ hai gồm hai số nguyên dương r, c - Theo thứ tự là số hàng, cột của ma trận muốn reshape thành.
-# n dòng tiếp theo là giá trị từng hàng của ma trận gốc a1,a2,...,am (−105 <= ai <= 105) - Các phần tử
-# cách nhau một khoảng trắng.
+arr = []
+for i in range(n):
+    _input = input().split()
+    for e in _input:
+        arr.append(e)
 
-# OUTPUT:
-# Nếu có thể reshape được ma trận, xuất ra ma trận mới. Ngược lại, xuất ma trận gốc.
+if (n * m == r * c):
+    for i in range(len(arr)):
+        if ((i+1) % c == 0):
+            print(arr[i])
+        else:
+            print(arr[i], end=' ')
+else:
+    for i in range(len(arr)):
+        if ((i+1) % m == 0):
+            print(arr[i])
+        else:
+            print(arr[i], end=' ')
